@@ -6,7 +6,6 @@ var RobotName = function(){
     while(nameHolder.indexOf(this.name) !== -1) {
       this.name = generateName();
     }
-
     nameHolder.push(this.name);
 };
 
@@ -26,8 +25,13 @@ var generateName = function(){
     return robotName;
 }
 
-//RobotName.prototype.name = new GenerateName();
+RobotName.prototype.reset = function(){
+  this.name = generateName();
 
-//RobotName.prototype.name = generateName();
+  while(nameHolder.indexOf(this.name) !== -1) {
+    this.name = generateName();
+  }
+  nameHolder.push(this.name);
+};
 
 module.exports = RobotName;
