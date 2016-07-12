@@ -23,7 +23,6 @@ Triangle.prototype.kind = function(){
   } else if( (a !== b) || (b !== c)){
     return "scalene";
   }
-
 }
 
 
